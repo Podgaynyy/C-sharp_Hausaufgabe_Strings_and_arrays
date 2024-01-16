@@ -1,10 +1,10 @@
-﻿//Задайте двумерный массив символов (тип char [,]).
-//Создать строку из символов этого массива.
+﻿//Gib massiv aus Symbolen ein (typ char [,]).
+//Mach ein String daraus.
 
 
-char[] letters = { 'a', 'b', 'c', 'd' }; //Создаём массив символов чар
-string str = ""; //создаём пустую строку, как на семинаре, не используя конструктор
+char[] letters = { 'a', 'b', 'c', 'd' }; //Erstellung Tupel
+string str = ""; //neue Zeichenkette
 for (int i = 0; i < letters.Length; i++) 
 {
-    str += letters[i]; //добавляем символы в строку
+    str += letters[i]; //übertragen Symbole in Zeichenkette
 }
