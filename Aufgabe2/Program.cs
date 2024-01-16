@@ -1,13 +1,13 @@
-﻿//Задайте строку, содержащую латинские буквы в обоих регистрах.
-//Сформируйте строку, в которой все заглавные буквы заменены на строчные.
+﻿//Git Zeichenkette an, das lateinische Buchstabei in beiden Register hat
+//Die groß in klein Umschreiben.
 
-string strings = "cDsDLnwn"; //создали строку в обеих регистрах
-void smallLetters(string strings) //Создали метод
+string strings = "cDsDLnwn"; //Provisorische Zeichenkette
+void smallLetters(string strings) //Method
 {
-    string finalString = strings.ToLower(); //нагуглил такую функцию,
-                                            //которая делает строку строчной без итерации
-    Console.WriteLine(finalString); // прошу распечатать,
-                                    // потому что метод ничего не возвращает
+    string finalString = strings.ToLower(); //Google gibt diese Variante als Vorschlag,
+                                            //So kann man ohne Iteration arbeiten
+    Console.WriteLine(finalString); // Bildschirm Ausgabe,
+                                    // Weil VOID
 }
 
-smallLetters(strings); //вызываю функцию
+smallLetters(strings); //Funktionsaufruf
