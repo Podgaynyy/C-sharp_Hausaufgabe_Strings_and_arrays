@@ -1,42 +1,42 @@
-﻿//Задайте произвольную строку. Выясните, является ли она палиндромом.
+﻿//Geben Sie eine benutzerdefinierte Zeichenfolge ein. Finden Sie heraus, ob es sich um ein Palindrom handelt.
 
 
-string sampleString(int length) //создадим метод, который вернёт
-                                //случайную строку заданной длины
+string sampleString(int length) //Lassen Sie uns eine Methode erstellen, die zurückgibt
+                                //zufälliger String einer bestimmten Länge
 {
-    Random random = new Random(); //будем рандомно выбирать буквы
-    string obrazecBukv = "abcdefghijklmnopqrstuvwxyz"; //создадим строку,
-                                                 //откуда будем делать рандомный выбор
+    Random random = new Random(); //Wir werden zufällig Buchstaben auswählen
+    string obrazecBukv = "abcdefghijklmnopqrstuvwxyz"; //Lass uns eine Linie erstellen,
+                                                 //wo wir eine zufällige Auswahl treffen werden
     string randomString = "";
 
-    for (int i = 0; i < length; i++) //выполним действие столько раз,
-                                     //какая длина строки задана 
+    for (int i = 0; i < length; i++) //Führen Sie die Aktion so oft aus, 
+      //wie die Länge der Zeichenfolge angegeben ist
     {
         randomString = randomString+obrazecBukv[random.Next(obrazecBukv.Length)];
-        //каждый раз приращаем строку на случайную букву
+        //Erhöhe die Zeichenfolge jedes Mal um einen zufälligen Buchstaben
     }
     return randomString;
 }
 
-Boolean Polyndrom(string sampleString)// создадим рекурсивный метод, который проверить,
-                                      // является ли строка полиндромом
+Boolean Polyndrom(string sampleString)// Lassen Sie uns eine rekursive Methode erstellen, die prüft
+                                      // ob die Zeichenfolge ein Polydrom ist
 {
-    if (sampleString.Length <= 1) //когда количество символов станет меньше или
-                                  //равно 1 или когда их будет 1 изначально,
-                                  //то это будет полиндром
+    if (sampleString.Length <= 1) //wenn die Anzahl der Zeichen kleiner wird oder
+                                  //gleich 1 oder wann anfangs 1 sein wird,
+                                  //dann wird es ein Polydrom sein
     {
         return true;
     }
     else if (sampleString[0] == sampleString[sampleString.Length-1])
-        //если крайние символы равны, то можем переходить к следующим
+        //Wenn die äußersten Zeichen gleich sind, können wir mit den nächsten fortfahren
     {
         return Polyndrom(sampleString.Substring(1, sampleString.Length - 2));
-        //это мы сделаем пройдясь ещё раз нашим методом, только не будем учитывать
-        //те крайние символы, которые уже проверили (удалим их)
+        //Wir werden dies tun, indem wir unsere Methode noch einmal durchgehen, aber wir werden es nicht berücksichtigen
+        //diese extremen Zeichen, die bereits überprüft wurden (entfernen)
     }
-    else { return false; } //если где-то крайние символы не будут равны,
-                           //то это не полиндром
+    else { return false; } //wenn irgendwo die Extremzeichen nicht gleich sind,
+                           //Das ist kein Polydrom
 }
 
-Console.WriteLine(Polyndrom(sampleString(3))); //однако даже с 3мя значениями в строке
-                                               //тяжело поймать полиндром 
+Console.WriteLine(Polyndrom(sampleString(3))); //allerdings sogar mit 3 Werten pro Zeile
+                                               //schwer zu fangendes Polydrom
